@@ -1,0 +1,258 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Each route owns a scoped theme class (.theme-home, .theme-about …) that
+ * redefines the semantic tokens below. Components only use semantic utilities
+ * (bg-background, text-primary, border-line, font-display …).
+ */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-line: var(--line);
+  --color-glow: var(--glow);
+  --font-display: var(--f-display);
+  --font-body: var(--f-body);
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.5rem;
+  --royal: oklch(0.48 0.22 264);
+  --crimson: oklch(0.55 0.22 25);
+  --background: oklch(0.97 0.012 85);
+  --foreground: oklch(0.17 0.02 260);
+  --card: var(--background);
+  --card-foreground: var(--foreground);
+  --popover: var(--background);
+  --popover-foreground: var(--foreground);
+  --primary: var(--royal);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.92 0.01 85);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.92 0.01 85);
+  --muted-foreground: oklch(0.45 0.02 260);
+  --accent: var(--crimson);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: var(--crimson);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.17 0.02 260 / 15%);
+  --input: var(--border);
+  --ring: var(--royal);
+  --line: var(--foreground);
+  --glow: var(--royal);
+  --f-display: "Archivo", system-ui, sans-serif;
+  --f-body: "Archivo", system-ui, sans-serif;
+}
+
+/* ---------- HOME: Swiss ink/ivory ---------- */
+.theme-home {
+  --background: oklch(0.965 0.014 85);
+  --foreground: oklch(0.16 0.025 262);
+  --muted-foreground: oklch(0.42 0.02 262);
+  --primary: var(--royal);
+  --accent: var(--crimson);
+  --line: oklch(0.16 0.025 262);
+  --f-display: "Archivo", sans-serif;
+  --f-body: "Archivo", sans-serif;
+}
+
+/* ---------- ABOUT: editorial paper + moss ---------- */
+.theme-about {
+  --background: oklch(0.955 0.02 95);
+  --foreground: oklch(0.22 0.03 150);
+  --muted: oklch(0.9 0.03 120);
+  --muted-foreground: oklch(0.42 0.03 150);
+  --primary: oklch(0.45 0.08 150);
+  --accent: var(--crimson);
+  --line: oklch(0.22 0.03 150 / 30%);
+  --f-display: "Fraunces", serif;
+  --f-body: "Newsreader", serif;
+}
+
+/* ---------- SKILLS: soft neumorphic clay ---------- */
+.theme-skills {
+  --background: oklch(0.92 0.008 250);
+  --card: oklch(0.92 0.008 250);
+  --foreground: oklch(0.25 0.03 260);
+  --muted-foreground: oklch(0.48 0.02 260);
+  --primary: var(--royal);
+  --accent: var(--crimson);
+  --line: oklch(0.25 0.03 260 / 12%);
+  --neu-light: oklch(1 0 0 / 85%);
+  --neu-dark: oklch(0.6 0.02 260 / 45%);
+  --f-display: "Manrope", sans-serif;
+  --f-body: "Manrope", sans-serif;
+}
+
+/* ---------- PROJECTS: neo-brutal ---------- */
+.theme-projects {
+  --background: oklch(0.95 0.06 100);
+  --card: oklch(1 0 0);
+  --foreground: oklch(0.12 0 0);
+  --muted: oklch(0.88 0.08 100);
+  --muted-foreground: oklch(0.3 0 0);
+  --primary: oklch(0.5 0.24 264);
+  --primary-foreground: oklch(1 0 0);
+  --accent: oklch(0.62 0.23 25);
+  --line: oklch(0.12 0 0);
+  --f-display: "Space Grotesk", sans-serif;
+  --f-body: "Space Grotesk", sans-serif;
+}
+
+/* ---------- PLAYGROUND: OLED cyber ---------- */
+.theme-play {
+  --background: oklch(0.08 0.01 270);
+  --card: oklch(0.13 0.02 270);
+  --foreground: oklch(0.93 0.02 200);
+  --muted: oklch(0.18 0.03 270);
+  --muted-foreground: oklch(0.68 0.04 220);
+  --primary: oklch(0.85 0.17 190);
+  --primary-foreground: oklch(0.1 0 0);
+  --accent: oklch(0.7 0.25 345);
+  --line: oklch(0.85 0.17 190 / 35%);
+  --glow: oklch(0.85 0.17 190);
+  --f-display: "Chakra Petch", sans-serif;
+  --f-body: "Chakra Petch", sans-serif;
+}
+
+/* ---------- ACHIEVEMENTS: retro scrapbook ---------- */
+.theme-ach {
+  --background: oklch(0.9 0.04 75);
+  --card: oklch(0.97 0.02 90);
+  --foreground: oklch(0.25 0.04 40);
+  --muted: oklch(0.85 0.06 70);
+  --muted-foreground: oklch(0.42 0.04 40);
+  --primary: oklch(0.45 0.15 260);
+  --accent: oklch(0.55 0.19 30);
+  --line: oklch(0.25 0.04 40);
+  --tape: oklch(0.88 0.1 95 / 75%);
+  --f-display: "Permanent Marker", cursive;
+  --f-body: "Courier Prime", monospace;
+}
+
+/* ---------- CONTACT: minimal + chrome ---------- */
+.theme-contact {
+  --background: oklch(0.985 0 0);
+  --foreground: oklch(0.15 0.01 260);
+  --muted: oklch(0.94 0 0);
+  --muted-foreground: oklch(0.48 0.01 260);
+  --primary: var(--royal);
+  --accent: var(--crimson);
+  --line: oklch(0.15 0.01 260 / 12%);
+  --chrome: linear-gradient(115deg, oklch(0.35 0.01 260) 0%, oklch(0.95 0 0) 22%, oklch(0.55 0.02 260) 40%, oklch(0.98 0 0) 55%, oklch(0.4 0.02 260) 75%, oklch(0.85 0.01 260) 100%);
+  --f-display: "Syne", sans-serif;
+  --f-body: "Manrope", sans-serif;
+}
+
+/* ---------- 404: pixel brutal ---------- */
+.theme-404 {
+  --background: oklch(0.2 0.05 290);
+  --foreground: oklch(0.97 0.05 100);
+  --primary: oklch(0.85 0.18 95);
+  --primary-foreground: oklch(0.15 0 0);
+  --accent: oklch(0.65 0.22 25);
+  --muted-foreground: oklch(0.8 0.04 290);
+  --line: oklch(0.97 0.05 100);
+  --f-display: "Press Start 2P", monospace;
+  --f-body: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body { background: var(--background); color: var(--foreground); font-family: var(--f-body); -webkit-font-smoothing: antialiased; }
+  .theme-root { background: var(--background); color: var(--foreground); font-family: var(--f-body); min-height: 100vh; }
+  :focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+/* ---------- shared primitives ---------- */
+.skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: var(--foreground); color: var(--background); padding: .5rem 1rem; }
+.skip-link:focus { top: 1rem; }
+
+.menu-trigger { display: inline-flex; align-items: center; gap: .4rem; font: 600 .8rem/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; padding: .6rem .8rem; border: 1px solid currentColor; border-radius: 999px; background: transparent; color: inherit; cursor: pointer; }
+.global-menu { position: fixed; inset: 0; z-index: 90; background: oklch(0.12 0.02 262); color: oklch(0.96 0.01 85); padding: 1.5rem; overflow: auto; animation: fade-in .2s ease-out; font-family: "Archivo", sans-serif; }
+.global-menu-close { display: inline-flex; gap: .5rem; align-items: center; font: 600 .85rem var(--font-mono); text-transform: uppercase; padding: .6rem .9rem; border: 1px solid currentColor; border-radius: 999px; background: none; color: inherit; cursor: pointer; }
+.global-menu ol { margin-top: 2rem; display: grid; gap: .25rem; }
+.global-menu a { display: flex; align-items: baseline; gap: 1rem; font-size: clamp(2rem, 8vw, 4rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; padding: .2rem 0; }
+.global-menu a .num { font: 500 .8rem var(--font-mono); opacity: .6; }
+.global-menu a[aria-current="page"] { color: oklch(0.65 0.2 25); }
+.global-menu a:hover { color: oklch(0.7 0.16 264); }
+
+@keyframes fade-in { from { opacity: 0 } to { opacity: 1 } }
+@keyframes rise { from { opacity: 0; transform: translateY(0.4em) } to { opacity: 1; transform: none } }
+
+/* Home */
+.swiss-grid { background-image: linear-gradient(to right, var(--border) 1px, transparent 1px); background-size: calc(100% / 12) 100%; }
+.kinetic-word { display: inline-block; animation: rise .7s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes marquee { to { transform: translateX(-50%) } }
+.marquee { animation: marquee 30s linear infinite; }
+.marquee:hover { animation-play-state: paused; }
+
+/* About */
+.paper-grain { background-image: radial-gradient(oklch(0.22 0.03 150 / 6%) 1px, transparent 1px); background-size: 4px 4px; }
+.leaf-blob { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; }
+
+/* Skills */
+.neu { background: var(--card); border-radius: 1.5rem; box-shadow: 10px 10px 24px var(--neu-dark), -10px -10px 24px var(--neu-light); }
+.neu-inset { border-radius: 999px; box-shadow: inset 3px 3px 6px var(--neu-dark), inset -3px -3px 6px var(--neu-light); }
+
+/* Projects */
+.brutal { background: var(--card); border: 3px solid var(--line); box-shadow: 8px 8px 0 var(--line); transition: transform .15s, box-shadow .15s; }
+.brutal-hover:hover, .brutal-hover:focus-visible { transform: translate(-3px, -3px); box-shadow: 11px 11px 0 var(--line); }
+.chip { border: 2px solid var(--line); padding: .35rem .9rem; font-weight: 700; background: var(--card); box-shadow: 3px 3px 0 var(--line); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--foreground); color: var(--background); }
+.dots-bg { background-image: radial-gradient(var(--line) 1.2px, transparent 1.2px); background-size: 22px 22px; }
+
+/* Playground */
+.cyber-grid { background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse at top, black 20%, transparent 75%); opacity: .35; }
+.glow-text { text-shadow: 0 0 12px color-mix(in oklab, var(--glow) 70%, transparent), 0 0 40px color-mix(in oklab, var(--glow) 35%, transparent); }
+.term { background: var(--card); border: 1px solid var(--line); border-radius: .4rem; box-shadow: 0 0 0 1px color-mix(in oklab, var(--glow) 10%, transparent), 0 0 30px -10px var(--glow); }
+.y2k-chrome { background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@keyframes blink { 50% { opacity: 0 } }
+.caret { animation: blink 1s steps(1) infinite; }
+
+/* Achievements */
+.tape { position: absolute; width: 6rem; height: 1.6rem; background: var(--tape); top: -.7rem; left: 50%; transform: translateX(-50%) rotate(-3deg); }
+.scrap-bg { background-image: repeating-linear-gradient(0deg, transparent 0 31px, oklch(0.25 0.04 40 / 8%) 31px 32px); }
+.stamp { border: 3px double var(--accent); color: var(--accent); transform: rotate(-8deg); }
+
+/* Contact */
+.chrome-text { background: var(--chrome); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shine 8s linear infinite; }
+.chrome-orb { background: radial-gradient(circle at 30% 25%, oklch(1 0 0), oklch(0.75 0.01 260) 30%, oklch(0.3 0.02 260) 65%, oklch(0.85 0.01 260) 100%); }
+@keyframes shine { to { background-position: -200% 0 } }
+
+/* 404 */
+.pixel { image-rendering: pixelated; }
+@keyframes bob { 50% { transform: translateY(-8px) } }
+@keyframes drift { from { transform: translateX(-20vw) } to { transform: translateX(110vw) } }
+.bob { animation: bob 1.2s steps(2) infinite; }
+.drift { animation: drift 24s linear infinite; }
